@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1_initiate_users
+      author: various
+      sqlFile:
+        relativeToChangelogFile: true
+        stripComments: true
+        splitStatements: true
+        path: 1_initiate_users.sql

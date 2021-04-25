@@ -1,0 +1,39 @@
+server:
+  error:
+    include-binding-errors: never
+    include-stacktrace: never
+    include-message: always
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      max-lifetime: 595000
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: docker
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      write-dates-with-zone-id: true
+      write-date-keys-as-timestamps: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate.create_empty_composites.enabled: true
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 30MB
+logging:
+  level:
+    org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl: INFO
+    org.springframework: INFO
+    com.zaxxer.hikari: INFO
+    com.example: DEBUG
+
