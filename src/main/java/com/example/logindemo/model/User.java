@@ -43,7 +43,7 @@ import java.util.Set;
 @ToString
 @Builder
 @Slf4j
-@SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence")
+@SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence", initialValue = 1, allocationSize = 5)
 public class User implements UserDetails {
     private static final long serialVersionUID = 1L;
 

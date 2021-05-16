@@ -2,6 +2,7 @@ package com.example.logindemo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,13 +18,12 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Setter
-@Getter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "role")
-@SequenceGenerator(name = "role_sequence", sequenceName = "role_sequence")
+@SequenceGenerator(name = "role_sequence", sequenceName = "role_sequence", allocationSize = 5, initialValue = 1)
 public class Role implements Serializable {
 
     @Id
@@ -35,7 +35,4 @@ public class Role implements Serializable {
     @Column(name = "role_name")
     private String roleName;
 
-    public Role(String roleName) {
-        this.roleName = roleName;
-    }
 }
