@@ -1,4 +1,6 @@
 create sequence hibernate_sequence;
+create sequence user_sequence;
+create sequence role_sequence;
 
 CREATE TABLE user_t
 (
@@ -22,8 +24,8 @@ CREATE TABLE user_role
     user_id BIGINT NOT NULL,
     role_id INTEGER NOT NULL,
     PRIMARY KEY (user_id, role_id),
-    CONSTRAINT FK859n2jvi8ivhui0rl0esws6o FOREIGN KEY (user_id) REFERENCES user_t (id),
-    CONSTRAINT FKa68196081fvovjhkek5m97n3y FOREIGN KEY (role_id) REFERENCES role (role_id)
+    CONSTRAINT user_fk FOREIGN KEY (user_id) REFERENCES user_t (id),
+    CONSTRAINT role_fk FOREIGN KEY (role_id) REFERENCES role (role_id)
 );
 
 

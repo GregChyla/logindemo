@@ -1,9 +1,17 @@
 databaseChangeLog:
   - changeSet:
       id: 1_initiate_users
-      author: various
+      author: Greg
       sqlFile:
         relativeToChangelogFile: true
         stripComments: true
         splitStatements: true
         path: 1_initiate_users.sql
+  - changeSet:
+      id: 2_populate_data
+      author: Greg
+      sqlFile:
+        relativeToChangelogFile: true
+        stripComments: true
+        splitStatements: true
+        path: 2_populate_data.sql
